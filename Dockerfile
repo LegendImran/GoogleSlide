@@ -3,7 +3,7 @@
 FROM python:3.9-slim
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /
 
 # Copy the dependencies file to the working directory
 COPY requirements.txt .
@@ -12,7 +12,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code into the container
-COPY ./app .
+COPY ./ .
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
